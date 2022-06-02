@@ -81,5 +81,9 @@ class HelloWorld(Resource):
 api.add_resource(HelloWorld, '/')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    port = 5000 + random.randint(0, 999)
+    print(port)
+    url = "http://127.0.0.1:{0}".format(port)
+    print(url)
+    app.run(port=port, host='0.0.0.0')
 
